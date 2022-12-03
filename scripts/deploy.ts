@@ -7,7 +7,7 @@ import fs from "fs";
 import { ethers } from "hardhat";
 
 async function main() {
-    var [owner] = await ethers.getSigners();
+    const [owner]: any = await ethers.getSigners();
     let network = await owner.provider._networkPromise;
 
     // token deployment

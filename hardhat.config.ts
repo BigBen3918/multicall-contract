@@ -1,7 +1,6 @@
 import { HardhatUserConfig, task } from "hardhat/config";
 import "hardhat-deploy";
 import "@nomicfoundation/hardhat-toolbox";
-import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-etherscan";
 import conf from "./config.json";
 
@@ -33,7 +32,7 @@ const config: HardhatUserConfig = {
             accounts: [conf.PRIVATEKEY],
         },
         fantomtestnet: {
-            url: "https://rpc.testnet.fantom.network",
+            url: "https://fantom-testnet.public.blastapi.io",
             accounts: [conf.PRIVATEKEY],
         },
         bsctestnet: {

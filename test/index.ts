@@ -1,9 +1,9 @@
-import fs from "fs";
+// import fs from "fs";
 import { ethers } from "hardhat";
 
 describe("TEST Case::", function () {
     it("deploy contract", async function () {
-        [owner] = await ethers.getSigners();
+        const [owner]: any = await ethers.getSigners();
         let network = await owner.provider._networkPromise;
 
         const MulticallContract = await ethers.getContractFactory("Multicall");
