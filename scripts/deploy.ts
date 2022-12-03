@@ -11,13 +11,13 @@ async function main() {
     let network = await owner.provider._networkPromise;
 
     // token deployment
-    const InvestTokenContract = await ethers.getContractFactory("ERC20");
-    const investToken = await InvestTokenContract.deploy("InvestToken", "IT");
-    await investToken.deployed();
-    console.log("investtoken deployed to:", investToken.address);
+    const MultiContract = await ethers.getContractFactory("Multicall");
+    const deployedMultiContract = await MultiContract.deploy();
+    await deployedMultiContract.deployed();
+    console.log("new multicontact deployed to:", deployedMultiContract.address);
 
     const contractsaddress = {
-        investtoken_address: investToken.address,
+        MultiContract_address: deployedMultiContract.address,
     };
 
     fs.writeFileSync(
